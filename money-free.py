@@ -2,6 +2,7 @@ import csv
 from datetime import datetime, timedelta, timezone
 from io import StringIO
 # from var.variable import TOKEN
+import os
 
 import pandas as pd
 import requests
@@ -54,7 +55,7 @@ def get_currency(currency_attr: str) -> str:
     return currency
 
 
-token = TOKEN
-print(get_currency('USD'))
-send_notify(token=token, msg=get_currency('USD'))
-send_notify(token=token, msg=get_currency('CNY'))
+if __name__ == '__main__':
+    token = os.environ.get('TOKEN')
+    send_notify(token=token, msg=get_currency('USD'))
+    send_notify(token=token, msg=get_currency('CNY'))

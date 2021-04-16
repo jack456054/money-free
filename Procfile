@@ -1,1 +1,1 @@
-worker: python3 money-free.py
+web: python3 money-free.py
