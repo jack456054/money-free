@@ -32,12 +32,11 @@ def what_for_lunch() -> str:
     restaurants = sheet.get_col(1)
     restaurants = list(filter(None, restaurants))
     msg = f'''
-閉嘴吧你們這群猶豫不決的人，今天午餐給我去吃 `{random.choice(restaurants)}` !!!!!!!!
-'''
+閉嘴吧你們這群猶豫不決的人，今天午餐給我去吃 `{random.choice(restaurants)}` !!!!!!!!'''
     return msg
 
 
 if __name__ == '__main__':
     token = os.environ.get('TOKEN')
     gs_cred = os.environ.get('GOOGLE_SHEET_CREDENTIALS')
-    send_notify(token=token, msg=what_for_lunch())
+    send_notify(token=token, msg=what_for_lunch(), stickerPackageId=6325, stickerId=10979906)
